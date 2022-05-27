@@ -7,7 +7,8 @@ const conexionError = {
 }
 
 export default {
-    userLogin
+    userLogin,
+    createUser
 }
 
 function userLogin(data) {
@@ -15,6 +16,23 @@ function userLogin(data) {
 
         Superagent
             .post('http://localhost:7777/users/login')
+            .send(data)
+            .end((error, resp) => {
+                
+                if(error)
+                    return resolve( resp? resp.body : conexionError )
+
+                resolve(resp.body)
+            })
+    })
+}
+
+
+function createUser(data) {
+    return new Promise((resolve, reject) => {
+
+        Superagent
+            .post('http://localhost:7777/users/')
             .send(data)
             .end((error, resp) => {
                 

@@ -1,0 +1,34 @@
+<script>
+
+    import { TaskStore } from '../stores'
+
+</script>
+
+{#if $TaskStore}
+
+    <div class="columns">
+        <div class="column">
+            <div class="title is-4">Nombre</div>
+            <div class="subtitle is-5">{ $TaskStore.name }</div>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <div class="title is-4">Categoría</div>
+            <div class="subtitle is-5">{ $TaskStore.category }</div>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <div class="title is-4">Descripción</div>
+            <div class="subtitle is-5">{ $TaskStore.description }</div>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <div class="title is-4">Fecha</div>
+            <div class="subtitle is-5">{ $TaskStore.date }</div>
+        </div>
+    </div>
+
+{/if}

@@ -1,7 +1,44 @@
 import { writable } from 'svelte/store'
 
+export let ModalStore = Modal(null)
+
+export let TaskStore = Model('Task')
 export let UserStore = Model('User')
 
+export let TasksStore = Collection('Tasks')
+
+function Collection(name, state = []) {
+
+    const {subscribe, update, set} = writable(state)
+
+    function append(data) {
+        return update(elements => {
+            elements.unshift(data)
+            return elements
+        })
+    }
+
+    function replace(data) {
+        return update(elements => {
+            return elements.map(element => element._id === data._id? data : element)
+        })
+    }
+
+    function remove(dataId) {
+        return update(elements => {
+            return elements.filter(item => item._id != dataId)
+        })
+    }
+
+    return {
+        append,
+        replace,
+        remove,
+        subscribe,
+        update,
+        set
+    }
+}
 
 function Model(name, state = null) {
 
@@ -14,6 +51,7 @@ function Model(name, state = null) {
 
     function modalRead(data = null) {
         ModalStore.set(`${ name }Read`)
+        console.log('si entra al modalread con name: ' + name)
         if(data) set(data)
     }
 
@@ -46,6 +84,28 @@ function Model(name, state = null) {
         modalDelete,
         modalOpen,
         modalClose,
+        subscribe,
+        update,
+        set
+    }
+}
+
+function Modal(state = null) {
+
+    const {subscribe, update, set} = writable(state)
+
+    function close() {
+        set(null)
+    }
+
+    function open(action) {
+        set(action)
+        console.log(action)
+    }
+
+    return {
+        close,
+        open,
         subscribe,
         update,
         set

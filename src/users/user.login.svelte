@@ -24,7 +24,7 @@
         localStorage.setItem('token', token)
         localStorage.setItem('user',  JSON.stringify(resp.data.user) )
 
-        navigateTo('/')
+        navigateTo('tasks')
     }
 
 </script>
