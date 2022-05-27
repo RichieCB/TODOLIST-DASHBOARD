@@ -31,9 +31,9 @@
     <div class="column">
         <Input on:enter={ getTasks } bind:value={ query.find } placeholder="Buscar" icon="search" />
     </div>
-    <!-- <div class="column is-narrow">
-        <Button on:click={() => CourseStore.modalCreate()} text="Agregar" color="info" />
-    </div> -->
+    <div class="column is-narrow">
+        <Button on:click={() => TaskStore.modalCreate()} text="Agregar Tarea" color="info" />
+    </div>
 </div>
 
 <table class="table is-striped is-fullwidth">
@@ -58,10 +58,10 @@
 
                 <td>
                     <Icon on:click={() => TaskStore.modalRead(task)} icon="eye" />
+                    <Icon on:click={() => TaskStore.modalUpdate(task)} icon="book" />
                 </td>
                 <!-- <td>
                     <Icon on:click={() => CourseStore.modalDelete(course)} icon="ban" />
-                    <Icon on:click={() => CourseStore.modalUpdate(course)} icon="edit" />
                 </td> -->
             </tr>
         {/each}

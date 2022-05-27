@@ -6,7 +6,7 @@
 
     import Task from '../tasks/task.svelte'
     import Tasks from '../tasks/tasks.svelte'
-    // import CourseCreate from '../courses/course.create.svelte'
+    import TaskCreate from '../tasks/task.create.svelte'
     // import CourseUpdate from '../courses/course.update.svelte'
     // import CourseDelete from '../courses/course.delete.svelte'
 
@@ -14,9 +14,7 @@
 
 </script>
 
-<!-- <Modal id="CourseCreate">
-    <CourseCreate on:created={ CourseStore.modalClose } />
-</Modal>
+<!-- 
 
 <Modal id="CourseUpdate">
     <CourseUpdate on:updated={ CourseStore.modalClose } />
@@ -27,7 +25,9 @@
 </Modal>
 
 -->
-
+<Modal id="TaskCreate">
+    <TaskCreate on:created={ TaskStore.modalClose } />
+</Modal>
 <Modal id="TaskRead">
     <Task />
 </Modal>
