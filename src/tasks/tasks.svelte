@@ -58,11 +58,9 @@
 
                 <td>
                     <Icon on:click={() => TaskStore.modalRead(task)} icon="eye" />
-                    <Icon on:click={() => TaskStore.modalUpdate(task)} icon="book" />
+                    <Icon on:click={() => TaskStore.modalUpdate(task)} icon="pencil" />
+                    <Icon on:click={() => TaskStore.modalDelete(task)} icon="ban" />
                 </td>
-                <!-- <td>
-                    <Icon on:click={() => CourseStore.modalDelete(course)} icon="ban" />
-                </td> -->
             </tr>
         {/each}
     </tbody>

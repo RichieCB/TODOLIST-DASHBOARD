@@ -7,26 +7,22 @@
     import Task from '../tasks/task.svelte'
     import Tasks from '../tasks/tasks.svelte'
     import TaskCreate from '../tasks/task.create.svelte'
-    // import CourseUpdate from '../courses/course.update.svelte'
-    // import CourseDelete from '../courses/course.delete.svelte'
+    import TaskUpdate from '../tasks/task.update.svelte'
+    import TaskDelete from '../tasks/task.delete.svelte'
 
     import Modal from '../$components/modal.svelte'
 
 </script>
 
-<!-- 
 
-<Modal id="CourseUpdate">
-    <CourseUpdate on:updated={ CourseStore.modalClose } />
+<Modal id="TaskUpdate">
+    <TaskUpdate on:updated={ TaskStore.modalClose } />
 </Modal>
-
-<Modal id="CourseDelete">
-    <CourseDelete on:deleted={ CourseStore.modalClose } />
-</Modal>
-
--->
 <Modal id="TaskCreate">
     <TaskCreate on:created={ TaskStore.modalClose } />
+</Modal>
+<Modal id="TaskDelete">
+    <TaskDelete on:deleted={ TaskStore.modalClose } />
 </Modal>
 <Modal id="TaskRead">
     <Task />
