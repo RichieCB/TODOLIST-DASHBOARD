@@ -33,9 +33,10 @@
     function updateData() {
         data = {
             name: $TaskStore.name,
-            hours: $TaskStore.category,
+            category: $TaskStore.category,
             description: $TaskStore.description,
             date: $TaskStore.date,
+            label: $TaskStore.label,
         }
     }
 

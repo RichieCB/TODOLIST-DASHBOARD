@@ -10,6 +10,9 @@
     import TaskUpdate from '../tasks/task.update.svelte'
     import TaskDelete from '../tasks/task.delete.svelte'
 
+    import SubtaskCreate from '../subtasks/subtask.create.svelte'
+    import Subtasks from '../subtasks/subtasks.svelte'
+
     import Modal from '../$components/modal.svelte'
 
 </script>
@@ -25,7 +28,12 @@
     <TaskDelete on:deleted={ TaskStore.modalClose } />
 </Modal>
 <Modal id="TaskRead">
-    <Task />
+
+        <Task />
+        <SubtaskCreate />
+        <Subtasks />
+
+    
 </Modal>
 
 <MenuLayout /> 

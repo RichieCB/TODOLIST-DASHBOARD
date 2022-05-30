@@ -20,17 +20,18 @@
 </script>
 
 <svelte:window on:keyup={onKeyup}/>
+{#if show}
+    <div class="modal is-active"  >
+        <div on:click={ closeModal } class="modal-background"></div>
+        <div class="modal-content">
 
-<div class="modal" class:is-active={ show } >
-    <div on:click={ closeModal } class="modal-background"></div>
-    <div class="modal-content">
-
-        <div class="card">
-            <div class="card-content">
-                <slot></slot>
+            <div class="card">
+                <div class="card-content">
+                    <slot></slot>
+                </div>
             </div>
-        </div>
 
+        </div>
+        <button on:click={ closeModal } class="modal-close is-large" aria-label="close"></button>
     </div>
-    <button on:click={ closeModal } class="modal-close is-large" aria-label="close"></button>
-</div>
+{/if}

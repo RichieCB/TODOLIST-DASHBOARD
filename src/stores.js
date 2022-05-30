@@ -3,9 +3,11 @@ import { writable } from 'svelte/store'
 export let ModalStore = Modal(null)
 
 export let TaskStore = Model('Task')
+export let SubtaskStore = Model('Subtask')
 export let UserStore = Model('User')
 
 export let TasksStore = Collection('Tasks')
+export let SubtasksStore = Collection('Subtasks')
 
 function Collection(name, state = []) {
 

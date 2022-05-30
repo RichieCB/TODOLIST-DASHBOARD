@@ -3,6 +3,7 @@
     import Button from './button.svelte'
 
     export let loading = false
+    export let showCancelar = true
     
 </script>
 
@@ -10,6 +11,9 @@
     
     <slot></slot>
 
-    <Button text="Cancelar" />
+    {#if showCancelar}
+        <Button text="Cancelar" />
+    {/if}
+
     <Button type="submit" text="Confirmar" color="primary" isLoading={ loading } />
 </form>
