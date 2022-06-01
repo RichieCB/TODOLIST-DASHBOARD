@@ -10,7 +10,8 @@ export default {
     getTasks,
     createTask,
     updateTask,
-    deleteTask
+    deleteTask,
+    getResume
 }
 
 function getTasks(query) {
@@ -86,4 +87,24 @@ function deleteTask( taskId ) {
                 resolve(resp.body)
             })
     })
+}
+
+function getResume () {
+    return new Promise((resolve, reject) => {
+
+        const token = localStorage.getItem('token')
+
+        Superagent
+            .get(`http://localhost:7777/resume`)
+            .set('token', token)
+            .end((error, resp) => {
+                
+                if(error)
+                    return resolve( resp? resp.body : conexionError )
+
+                resolve(resp.body)
+            })
+    })
+    
+
 }

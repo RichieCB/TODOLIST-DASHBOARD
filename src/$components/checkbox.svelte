@@ -5,6 +5,5 @@
 
 <label class="checkbox">
     <input on:change type="checkbox" bind:checked={ isChecked }>
-        Terminado
   </label>
 

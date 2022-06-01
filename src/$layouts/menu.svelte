@@ -10,6 +10,14 @@
         localStorage.removeItem('user')
         navigateTo('login')
     }
+    function resume() {
+        navigateTo('/')
+    }
+
+    function tasks() {
+        navigateTo('tasks')
+    }
+
 
 </script>
 
@@ -25,7 +33,19 @@
 
 </style>
 
-<div class="nav">
-    <div class="title"> Tareas de { $UserStore.name  }</div>
-    <Button on:click={ logout } icon="person-running" />
-</div>
+
+    <div class="columns is-centered">
+        <div class="column is-half ">
+            <div class="nav">
+                <div class="title"> Tareas de { $UserStore.name  }</div>
+                <div class="columns is-centered">
+                    <Button on:click={resume} icon="chart-line" />
+                    <Button on:click={tasks} icon="list-check" />
+                    <Button on:click={ logout } icon="person-running" />
+
+                </div>
+
+            </div>
+
+        </div>  
+    </div>

@@ -58,6 +58,7 @@
     <thead>
         <tr>
             <th>#</th>
+            <th>Finalizado</th>
             <th>Nombre</th>
             <th>Categoría</th>
             <th>Descripción</th>
